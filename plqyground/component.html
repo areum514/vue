@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <app-header></app-header>
+        <app-footer></app-footer>
+    </div>
+    <div id="app2">
+        <app-header></app-header>
+        <app-footer></app-footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        //전역컴포넌트
+        //Vue.component('컴포넌트 이름',컴포넌트 내용);
+        //실제 개발할때는 플러그인이나 라이브 형태로만 사용 대부분 지역 컴포넌트로
+        
+        Vue.component('app-header',{
+            template:'<h1>header</h1>'
+        });
+    
+
+        new Vue({
+            el: '#app',
+            /* 지역 컴포넌트 
+            components:{
+                컴포넌트이름: 컴포넌트내용
+            } */
+            components:{
+                'app-footer':{
+                    template:'<p>footer</p>'
+                }
+            }
+        });
+        new Vue({
+                el: '#app2'
+            });
+    </script>
+</body>
+</html>
