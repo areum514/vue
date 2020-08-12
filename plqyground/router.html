@@ -7,6 +7,10 @@
 </head>
 <body>
     <div id="app">
+        <div>
+            <router-link to ='/login'> Login</router-link>
+            <router-link to ='/main'>Main</router-link>
+        </div>
         <router-view></router-view>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -16,10 +20,11 @@
             template:'<div>login</div>'
         }
         var MainComponent = {
-                template: '<div>main</div>'
+            template: '<div>main</div>'
         }
         var router=new VueRouter({
-            //페이지의 라우팅 정보(어떤 유아엘로 이동했을때 어떤 페이지가 띄울것인지) 페이지의 갯수만큼 객체의 갯수가 필요 {}
+            //페이지의 라우팅 정보(해당 URL 이동했을때 어떤 페이지가 띄울것인지) 페이지의 갯수만큼 객체의 갯수가 필요 {}
+            mode:'history',
             routes:[
                 {
                     //페이지 url
@@ -36,7 +41,10 @@
         
         new Vue({
             el:'#app',
-            router: router
+            router: router,
+            componets:{
+
+            }
         })
     </script>
 </body>
