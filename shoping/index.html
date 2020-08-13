@@ -32,7 +32,7 @@
             
 
                 <ul v-for="size in sizes">{{size}}</ul>
-                <button v-on:click="addToCart" :disabled="!inStock" :class="{ disabledButton: !inStock }">
+                <button v-on:click="addToCart" :disabled="!inStock" :class="{ disabledButton: !inStock}">
                     Add to cart
                 </button>
                 
